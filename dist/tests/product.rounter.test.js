@@ -70,7 +70,7 @@ describe("Product Router", () => {
         expect(response.body).toEqual({ message: "Invalid ID format" });
     }));
     it("should insert a new product", () => __awaiter(void 0, void 0, void 0, function* () {
-        const newProduct = { id: 2, name: "New Product", price: 20 };
+        const newProduct = { id: 6604101356, name: "พรพิพัฒน์ พรมเสพสัก", price: 9999999 };
         const response = yield (0, supertest_1.default)(app).post("/products").send(newProduct);
         expect(response.status).toBe(201);
         expect(response.body).toEqual({ message: "Product created successfully" });
