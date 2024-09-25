@@ -7,7 +7,7 @@ jest.mock("../controller/product.controller", () => ({
   getAll: jest.fn((req, res) =>
     res.status(200).send({
       message: "OK",
-      result: [{ id: 6604101356, name: "พรพิพัฒน์ พรมเสพสัก" }],
+      result: [{ id: 1, name: "product" }],
     })
   ),
   deleteById: jest.fn((req, res) => {
@@ -50,7 +50,7 @@ describe("Product Router", () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
       message: "OK",
-      result: [{ id: 6604101356, name: "พรพิพัฒน์ พรมเสพสัก" }],
+      result: [{ id: 1, name: "product" }],
     });
   });
 
@@ -66,7 +66,7 @@ describe("Product Router", () => {
   });
 
   it("should insert a new product", async () => {
-    const newProduct = { id: 6604101356, name: "พรพิพัฒน์ พรมเสพสัก", price: 9999999 };
+    const newProduct = { id: 1, name: "product", price: 1 };
     const response = await request(app).post("/products").send(newProduct);
     expect(response.status).toBe(201);
     expect(response.body).toEqual({ message: "Product created successfully" });
